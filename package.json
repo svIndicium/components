@@ -1,6 +1,10 @@
 {
-  "name": "indicium components",
-  "version": "0.0.1",
+  "name": "@svindicium/indicium-components",
+  "version": "0.0.2",
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com"
+  },
+  "repository": "git://github.com/svIndicium/indicium-components.git",
   "scripts": {
     "dev": "vue-cli-service serve main.ts",
     "build": "vue-cli-service build main.ts",

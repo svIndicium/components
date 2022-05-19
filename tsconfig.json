@@ -30,7 +30,10 @@
       "@nuxtjs/axios",
       "@types/node",
       "vuetify/types",
-      "./@types"
+      "@nuxtjs/vuetify",
+      "@nuxtjs/i18n",
+      "webpack-env",
+      "./@types",
     ]
   },
   "exclude": [
