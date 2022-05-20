@@ -9,7 +9,7 @@
 			@input="onInput"
 			@blur="onBlur"
 		>
-			<template #label>{{ label }}</template>
+			<template #label><slot name="label"></slot></template>
 			<template #append><slot name="append"></slot></template>
 			<template #prepend><slot name="prepend"></slot></template>
 		</v-text-field>
@@ -20,12 +20,11 @@
 	import Vue from "vue";
 	import { Component, Emit, Prop, Watch } from "vue-property-decorator";
 
-	import { HTMLEvent } from "utils/Events";
+	import {HTMLEvent } from "utils/Events";
 
 	@Component
 	export default class ITextInput extends Vue {
 		@Prop({ type: String, required: false }) placeholder?: string
-		@Prop({ type: String, required: false }) label?: string
 
 		@Prop({ type: Boolean, required: false }) inline?: boolean
 

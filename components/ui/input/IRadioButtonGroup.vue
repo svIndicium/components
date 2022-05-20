@@ -26,15 +26,15 @@
 	import Vue from "vue";
 	import { Component, Emit, Prop, Watch } from "vue-property-decorator";
 	import { cloneDeep, isEqual } from "lodash-es";
-	import { OptionModel, RadioButtonGroupDirection } from ".";
-	import {HTMLEvent} from "utils/Events";
+	import { HTMLEvent } from "utils/Events";
+	import { OptionModel, RadioButtonGroupDirection } from "components/ui";
 
 	@Component
 	export default class IRadioButtonGroup<T extends OptionModel> extends Vue {
 		@Prop({ type: Array, default: () => [] }) options!: Array<OptionModel>
 		@Prop({ type: String, default: RadioButtonGroupDirection.VERTICAL }) direction!: RadioButtonGroupDirection
 
-		@Prop({ type: [String, Number, Boolean, Object ] }) value?: string | number | boolean | object
+		@Prop({ type: [ String, Number, Boolean, Object ] }) value?: string | number | boolean | object
 
 		internalValue = -1
 

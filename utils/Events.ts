@@ -1,5 +1,6 @@
 export enum HTMLEvent {
     INPUT = "input",
     CHANGE = "change",
-    BLUR = "blur"
+    BLUR = "blur",
+    CLICK = "click"
 }
