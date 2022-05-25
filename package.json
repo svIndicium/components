@@ -46,7 +46,7 @@
     "chokidar": "^3.5.2",
     "css-loader": "^5.2.6",
     "eslint": "^7.29.0",
-    "eslint-plugin-nuxt": "^2.0.0",
+    "eslint-plugin-nuxt": "^3.2.0",
     "husky": "^6.0.0",
     "lint-staged": "^11.0.0",
     "@nuxtjs/svg": "^0.3.0",
