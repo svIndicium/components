@@ -12,7 +12,8 @@ module.exports = {
 		indent: "off",
 		"space-before-function-paren": "off",
 		"no-tabs": "off",
-		"no-mixed-spaces-and-tabs": "off"
+		"no-mixed-spaces-and-tabs": "off",
+		"template-curly-spacing": "off"
 	},
 	extends: [
 		"@nuxtjs/eslint-config-typescript",

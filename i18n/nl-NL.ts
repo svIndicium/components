@@ -1,4 +1,4 @@
-export const translations = {
+export default {
     general: {
         yes: "ja",
         no: "nee",
@@ -13,5 +13,8 @@ export const translations = {
             email: "E-mailadres",
             phoneNumber: "Telefoonnummer"
         }
+    },
+    validation: {
+        required: "Dit veld is verplicht"
     }
 }

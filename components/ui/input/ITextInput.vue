@@ -8,6 +8,7 @@
 			:type="password ? 'password' : 'text'"
 			:loading="loading"
 			:disabled="disabled"
+			:error-messages="errorMessages"
 			@change="onChange"
 			@input="onInput"
 			@blur="onBlur"
@@ -29,16 +30,38 @@
 	import Vue from "vue"
 	import { Component, Emit, Prop, Watch } from "vue-property-decorator"
 
+	import { ObjectErrors } from "@svindicium/general-lib/validation"
+
+	import { isNull, isUndefined } from "lodash-es"
 	import { HTMLEvent } from "../../../utils/Events"
 
 	@Component
-	export default class ITextInput extends Vue {
+	export default class ITextInput<T> extends Vue {
+		@Prop({ type: String, required: true }) value!: string
+
 		@Prop({ type: String, required: false }) placeholder?: string
 		@Prop({ type: Boolean, required: false }) inline?: boolean
 		@Prop({ type: Boolean, required: false }) loading?: boolean
 		@Prop({ type: Boolean, required: false }) disabled?: boolean
 		@Prop({ type: Boolean, required: false }) password?: boolean
-		@Prop({ type: String, required: true }) value!: string
+
+		@Prop({ type: Object, required: false }) errors?: ObjectErrors<T>
+		@Prop({ type: String, default: "validation" }) baseTranslationKey!: string
+		@Prop({ type: String, required: false }) fieldName!: keyof T
+		@Prop({ type: Array, default: () => ["required"] }) genericMessages!: Array<string>
+		@Prop({ type: Boolean, default: false }) showErrors!: boolean
+
+		get errorMessages(): Array<string> | undefined {
+			if (isUndefined(this.fieldName) || isUndefined(this.errors) || isNull(this.errors) || !this.showErrors) {
+				return
+			}
+			return this.errors[this.fieldName]?.map((error) => {
+				if (!this.genericMessages.includes(error)) {
+					return Vue.filter("locale")(`${ this.baseTranslationKey }.${ this.fieldName }.${ error }`)
+				}
+				return Vue.filter("locale")(`${ this.baseTranslationKey }.${ error }`)
+			})
+		}
 
 		internalValue = ""
 

@@ -2,7 +2,7 @@
 	<v-alert
 		border="bottom"
 		elevation="2"
-		:type="type"
+		:type="alertType"
 	>
 		<slot />
 	</v-alert>
@@ -17,6 +17,10 @@
 	@Component
 	export default class IAlert extends Vue {
 		@Prop({ type: String, default: AlertType.INFO }) type!: AlertType
+
+		get alertType(): string {
+			return this.type.toLowerCase()
+		}
 	}
 </script>
 

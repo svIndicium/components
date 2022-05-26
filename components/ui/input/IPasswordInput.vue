@@ -4,6 +4,11 @@
 		:placeholder="placeholder"
 		:loading="loading"
 		:disabled="disabled"
+		:errors="errors"
+		:base-translation-key="baseTranslationKey"
+		:field-name="fieldName"
+		:generic-messages="genericMessages"
+		:show-errors="showErrors"
 		password
 		@change="onChange"
 		@input="onInput"
@@ -28,6 +33,7 @@
 	import { HTMLEvent } from "../../../utils/Events"
 
 	import ITextInput from "../../../components/ui/input/ITextInput.vue"
+	import { FieldErrors } from "@svindicium/general-lib/validation"
 
 	@Component({
 		components: { ITextInput }
@@ -38,6 +44,12 @@
 		@Prop({ type: Boolean, required: false }) loading?: boolean
 		@Prop({ type: Boolean, required: false }) disabled?: boolean
 		@Prop({ type: String, required: true }) value!: string
+
+		@Prop({ type: Object, required: false }) errors?: FieldErrors
+		@Prop({ type: String, default: "validation" }) baseTranslationKey!: string
+		@Prop({ type: String, required: false }) fieldName?: string
+		@Prop({ type: Array, default: () => ["required"] }) genericMessages!: Array<string>
+		@Prop({ type: Boolean, default: false }) showErrors!: boolean
 
 		internalValue = ""
 
