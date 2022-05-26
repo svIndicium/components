@@ -5,11 +5,13 @@
 		:column="!isHorizontal"
 		@change="onChange"
 	>
-		<template #label><slot name="label"></slot></template>
+		<template #label>
+			<slot name="label" />
+		</template>
 		<v-radio
 			v-for="(option, index) in options"
-			:disabled="option.disabled"
 			:key="index"
+			:disabled="option.disabled"
 			:value="index"
 		>
 			<template #label>
@@ -18,23 +20,25 @@
 				</slot>
 			</template>
 		</v-radio>
-
 	</v-radio-group>
 </template>
 
 <script lang="ts">
-	import Vue from "vue";
-	import { Component, Emit, Prop, Watch } from "vue-property-decorator";
-	import { cloneDeep, isEqual } from "lodash-es";
-	import { HTMLEvent } from "utils/Events";
-	import { OptionModel, RadioButtonGroupDirection } from "components/ui";
+	import Vue from "vue"
+	import { Component, Emit, Prop, Watch } from "vue-property-decorator"
+
+	import { cloneDeep, isEqual } from "lodash-es"
+
+	import { OptionModel, RadioButtonGroupDirection } from "~/components/ui"
+
+	import { HTMLEvent } from "~/utils/Events"
 
 	@Component
 	export default class IRadioButtonGroup<T extends OptionModel> extends Vue {
 		@Prop({ type: Array, default: () => [] }) options!: Array<OptionModel>
 		@Prop({ type: String, default: RadioButtonGroupDirection.VERTICAL }) direction!: RadioButtonGroupDirection
 
-		@Prop({ type: [ String, Number, Boolean, Object ] }) value?: string | number | boolean | object
+		@Prop({ type: [String, Number, Boolean, Object] }) value?: string | number | boolean | object
 
 		internalValue = -1
 
@@ -54,7 +58,5 @@
 			const selected = this.options[this.internalValue]?.value
 			return cloneDeep(selected)
 		}
-
 	}
 </script>
-

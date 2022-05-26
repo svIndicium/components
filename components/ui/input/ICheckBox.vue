@@ -4,17 +4,26 @@
 		:disabled="disabled"
 		@change="onChange"
 	>
-		<template #label><slot name="label"></slot></template>
-		<template #append><slot name="append"></slot></template>
-		<template #prepend><slot name="prepend"></slot></template>
-		<template #message><slot name="message"></slot></template>
+		<template #label>
+			<slot name="label" />
+		</template>
+		<template #append>
+			<slot name="append" />
+		</template>
+		<template #prepend>
+			<slot name="prepend" />
+		</template>
+		<template #message>
+			<slot name="message" />
+		</template>
 	</v-checkbox>
 </template>
 
 <script lang="ts">
-	import Vue from "vue";
-	import { Component, Emit, Prop, Watch } from "vue-property-decorator";
-	import { HTMLEvent } from "utils/Events";
+	import Vue from "vue"
+	import { Component, Emit, Prop, Watch } from "vue-property-decorator"
+
+	import { HTMLEvent } from "~/utils/Events"
 
 	@Component
 	export default class ICheckBox extends Vue {

@@ -9,18 +9,24 @@
 			@input="onInput"
 			@blur="onBlur"
 		>
-			<template #label><slot name="label"></slot></template>
-			<template #append><slot name="append"></slot></template>
-			<template #prepend><slot name="prepend"></slot></template>
+			<template #label>
+				<slot name="label" />
+			</template>
+			<template #append>
+				<slot name="append" />
+			</template>
+			<template #prepend>
+				<slot name="prepend" />
+			</template>
 		</v-text-field>
 	</div>
 </template>
 
 <script lang="ts">
-	import Vue from "vue";
-	import { Component, Emit, Prop, Watch } from "vue-property-decorator";
+	import Vue from "vue"
+	import { Component, Emit, Prop, Watch } from "vue-property-decorator"
 
-	import {HTMLEvent } from "utils/Events";
+	import { HTMLEvent } from "~/utils/Events"
 
 	@Component
 	export default class ITextInput extends Vue {
@@ -66,4 +72,3 @@
 		}
 	}
 </style>
-
