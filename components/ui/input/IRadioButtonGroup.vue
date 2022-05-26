@@ -6,7 +6,7 @@
 		@change="onChange"
 	>
 		<template #label>
-			<slot name="label" />
+			<slot />
 		</template>
 		<v-radio
 			v-for="(option, index) in options"
@@ -29,7 +29,7 @@
 
 	import { cloneDeep, isEqual } from "lodash-es"
 
-	import { OptionModel, RadioButtonGroupDirection } from "../../../components/ui"
+	import { OptionModel, RadioButtonGroupDirection } from "../../../components/ui/input"
 
 	import { HTMLEvent } from "../../../utils/Events"
 

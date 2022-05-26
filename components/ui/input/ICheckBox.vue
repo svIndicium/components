@@ -5,7 +5,7 @@
 		@change="onChange"
 	>
 		<template #label>
-			<slot name="label" />
+			<slot />
 		</template>
 		<template #append>
 			<slot name="append" />

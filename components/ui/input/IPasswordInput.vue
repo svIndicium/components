@@ -1,28 +1,24 @@
 <template>
-	<div
-		:class="[inline ? 'inline' : '']"
+	<i-text-input
+		v-model="internalValue"
+		:placeholder="placeholder"
+		:loading="loading"
+		:disabled="disabled"
+		password
+		@change="onChange"
+		@input="onInput"
+		@blur="onBlur"
 	>
-		<v-text-field
-			v-model="internalValue"
-			:placeholder="placeholder"
-			:type="password ? 'password' : 'text'"
-			:loading="loading"
-			:disabled="disabled"
-			@change="onChange"
-			@input="onInput"
-			@blur="onBlur"
-		>
-			<template #label>
-				<slot />
-			</template>
-			<template #append>
-				<slot name="append" />
-			</template>
-			<template #prepend>
-				<slot name="prepend" />
-			</template>
-		</v-text-field>
-	</div>
+		<template #default>
+			<slot />
+		</template>
+		<template #append>
+			<slot name="append" />
+		</template>
+		<template #prepend>
+			<slot name="prepend" />
+		</template>
+	</i-text-input>
 </template>
 
 <script lang="ts">
@@ -31,13 +27,16 @@
 
 	import { HTMLEvent } from "../../../utils/Events"
 
-	@Component
-	export default class ITextInput extends Vue {
+	import ITextInput from "../../../components/ui/input/ITextInput.vue"
+
+	@Component({
+		components: { ITextInput }
+	})
+	export default class IPasswordInput extends Vue {
 		@Prop({ type: String, required: false }) placeholder?: string
 		@Prop({ type: Boolean, required: false }) inline?: boolean
 		@Prop({ type: Boolean, required: false }) loading?: boolean
 		@Prop({ type: Boolean, required: false }) disabled?: boolean
-		@Prop({ type: Boolean, required: false }) password?: boolean
 		@Prop({ type: String, required: true }) value!: string
 
 		internalValue = ""
@@ -63,16 +62,3 @@
 		}
 	}
 </script>
-
-<style lang="scss" scoped>
-	div {
-		display: block;
-		position: relative;
-		margin: 10px 0;
-		.inline {
-			width: 180px;
-			float: left;
-			margin: 0 10px 10px 0;
-		}
-	}
-</style>
