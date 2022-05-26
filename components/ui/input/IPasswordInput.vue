@@ -30,10 +30,10 @@
 	import Vue from "vue"
 	import { Component, Emit, Prop, Watch } from "vue-property-decorator"
 
+	import { FieldErrors } from "@svindicium/general-lib/validation"
 	import { HTMLEvent } from "../../../utils/Events"
 
 	import ITextInput from "../../../components/ui/input/ITextInput.vue"
-	import { FieldErrors } from "@svindicium/general-lib/validation"
 
 	@Component({
 		components: { ITextInput }
