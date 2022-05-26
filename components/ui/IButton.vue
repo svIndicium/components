@@ -12,7 +12,7 @@
 <script lang="ts">
 	import Vue from "vue"
 	import { Component, Emit, Prop } from "vue-property-decorator"
-	import { HTMLEvent } from "~/utils/Events"
+	import { HTMLEvent } from "../../utils/Events"
 
 	@Component
 	export default class IButton extends Vue {

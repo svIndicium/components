@@ -29,9 +29,9 @@
 
 	import { cloneDeep, isEqual } from "lodash-es"
 
-	import { OptionModel, RadioButtonGroupDirection } from "~/components/ui"
+	import { OptionModel, RadioButtonGroupDirection } from "../../../components/ui"
 
-	import { HTMLEvent } from "~/utils/Events"
+	import { HTMLEvent } from "../../../utils/Events"
 
 	@Component
 	export default class IRadioButtonGroup<T extends OptionModel> extends Vue {

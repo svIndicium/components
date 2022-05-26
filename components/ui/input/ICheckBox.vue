@@ -23,7 +23,7 @@
 	import Vue from "vue"
 	import { Component, Emit, Prop, Watch } from "vue-property-decorator"
 
-	import { HTMLEvent } from "~/utils/Events"
+	import { HTMLEvent } from "../../../utils/Events"
 
 	@Component
 	export default class ICheckBox extends Vue {
