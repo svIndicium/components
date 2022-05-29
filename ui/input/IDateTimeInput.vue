@@ -98,7 +98,6 @@
 		}
 
 		emitWhenDone(): void {
-			console.log(this.internalDateValue)
 			 if (/[1-9]\d{3}-\d{2}-\d{2}/.test(this.internalDateValue) && /\d{2}:\d{2}/.test(this.internalTimeValue)) {
 				 this.onInput()
 			 }
