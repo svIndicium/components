@@ -1,7 +1,7 @@
 import Vue from "vue"
 
 import axios from "axios"
-import { AuthenticationClient } from "../../indicium-components/api/clients/Authentication"
+import { AuthenticationClient } from "../api/clients/Authentication"
 import { EndGateway } from "../api/request/EndGateway"
 import { AxiosGateway } from "../api/request/AxiosGateway"
 import { EventClient } from "../api/clients/Events"
