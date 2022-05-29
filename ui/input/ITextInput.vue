@@ -8,6 +8,7 @@
 			:type="password ? 'password' : 'text'"
 			:loading="loading"
 			:disabled="disabled"
+			:readonly="readonly"
 			:error-messages="errorMessages"
 			@change="onChange"
 			@input="onInput"
@@ -38,13 +39,14 @@
 
 	@Component
 	export default class ITextInput<T> extends Vue {
-		@Prop({ type: String, required: true }) value!: string
+		@Prop({ type: String, default: "" }) value!: string
 
 		@Prop({ type: String, required: false }) placeholder?: string
 		@Prop({ type: Boolean, required: false }) inline?: boolean
 		@Prop({ type: Boolean, required: false }) loading?: boolean
 		@Prop({ type: Boolean, required: false }) disabled?: boolean
 		@Prop({ type: Boolean, required: false }) password?: boolean
+		@Prop({ type: Boolean, required: false }) readonly?: boolean
 
 		@Prop({ type: Object, required: false }) errors?: ObjectErrors<T>
 		@Prop({ type: String, default: "validation" }) baseTranslationKey!: string

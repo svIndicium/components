@@ -15,7 +15,7 @@ export class EndGateway {
 
     async request(method: RequestMethod, resource: string, data?: Parameters, options?: RequestOptions): Promise<AxiosResponse> {
         const response = await this.authorizedGateway.request(method, resource, data, options).response
-        if (response.status !== 200) {
+        if (response.status !== 200 && response.status !== 201) {
             throw response
         }
         return response

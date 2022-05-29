@@ -6,6 +6,7 @@ export default {
         loading: "Laden",
         username: "Gebruikersnaam",
         password: "Wachtwoord",
+        save: "Opslaan",
         personal: {
             firstName: "Voornaam",
             infix: "Tussenvoegsel",
@@ -15,6 +16,12 @@ export default {
         }
     },
     validation: {
-        required: "Dit veld is verplicht"
+        required: "Dit veld is verplicht",
+        startDateTime: {
+            minimum: "De startdatum mag niet in het verleden liggen"
+        },
+        endDateTime: {
+            minimum: "De einddatum mag niet voor de startdatum liggen"
+        }
     }
 }

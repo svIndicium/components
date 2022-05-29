@@ -5,6 +5,7 @@
 		:loading="loading"
 		:disabled="disabled"
 		:errors="errors"
+		:readonly="readonly"
 		:base-translation-key="baseTranslationKey"
 		:field-name="fieldName"
 		:generic-messages="genericMessages"
@@ -43,6 +44,7 @@
 		@Prop({ type: Boolean, required: false }) inline?: boolean
 		@Prop({ type: Boolean, required: false }) loading?: boolean
 		@Prop({ type: Boolean, required: false }) disabled?: boolean
+		@Prop({ type: Boolean, required: false }) readonly?: boolean
 		@Prop({ type: String, required: true }) value!: string
 
 		@Prop({ type: Object, required: false }) errors?: FieldErrors
