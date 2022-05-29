@@ -30,7 +30,7 @@
 	import Vue from "vue"
 	import { Component, Emit, Prop, Watch } from "vue-property-decorator"
 
-	import { ObjectErrors } from "@svindicium/general-lib/validation"
+	import { ObjectErrors } from "@svindicium/lib/validation"
 
 	import { isNull, isUndefined } from "lodash-es"
 
