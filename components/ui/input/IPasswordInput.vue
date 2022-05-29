@@ -31,9 +31,9 @@
 	import { Component, Emit, Prop, Watch } from "vue-property-decorator"
 
 	import { FieldErrors } from "@svindicium/general-lib/validation"
-	import { HTMLEvent } from "../../../utils/Events"
 
 	import ITextInput from "../../../components/ui/input/ITextInput.vue"
+	import { HTMLEvent } from "../../../utils/Events"
 
 	@Component({
 		components: { ITextInput }

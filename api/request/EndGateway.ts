@@ -1,6 +1,6 @@
+import Gateway from "../../api/request/Gateway"
 import { AxiosResponse } from "axios"
 import { AuthorizedAxiosGateway } from "../../api/request/AuthorizedAxiosGateway"
-import Gateway from "../../api/request/Gateway"
 import { Parameters, RequestMethod, RequestOptions } from "../../api/request/index"
 
 export class EndGateway {

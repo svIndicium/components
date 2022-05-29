@@ -1,4 +1,3 @@
-import Vue from "vue"
 import { AxiosResponse } from "axios"
 import {
     AuthenticationState,
@@ -9,6 +8,7 @@ import {
     RequestOptions
 } from "../../api/request/index"
 import Gateway from "../../api/request/Gateway"
+import { eventBus } from "../../api/index"
 
 export class AuthorizedAxiosGateway implements Gateway {
     constructor(private gateway: Gateway,
@@ -37,12 +37,13 @@ export class AuthorizedAxiosGateway implements Gateway {
             response: request.response.then((response: AxiosResponse) => {
                 switch (response.status) {
                     case 401:
-                        Vue.prototype.$eventBus.emit(AuthenticationState.AUTHORIZATION_FAILED)
+                        eventBus.$emit(AuthenticationState.AUTHORIZATION_FAILED)
                         break
                     case 403:
-                        Vue.prototype.$eventBus.emit(AuthenticationState.ACCESS_DENIED)
+                        eventBus.$emit(AuthenticationState.ACCESS_DENIED)
                         break
                 }
+                response.data = response.data.data
                 return response
             })
         }

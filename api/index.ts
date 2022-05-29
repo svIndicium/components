@@ -1,9 +1,12 @@
+import Vue from "vue"
+
 import axios from "axios"
 import { AuthenticationClient } from "../../indicium-components/api/clients/Authentication"
 import { EndGateway } from "../api/request/EndGateway"
 import { AxiosGateway } from "../api/request/AxiosGateway"
+import { EventClient } from "../api/clients/Events"
 
-const storage: Storage = process.server
+export const storage: Storage = process.server
   ? {
     getItem(_key: string): string | null {
       return null
@@ -25,3 +28,5 @@ axios.defaults.headers.put["Content-Type"] = "application/json"
 axios.defaults.headers.patch["Content-Type"] = "application/json"
 export const gateway = new EndGateway(new AxiosGateway(axios), storage)
 export const authenticationClient = new AuthenticationClient(gateway)
+export const eventClient = new EventClient(gateway)
+export const eventBus = new Vue()

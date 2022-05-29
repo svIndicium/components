@@ -36,5 +36,6 @@ export type RequestOptions = Omit<AxiosRequestConfig, "url" | "baseURL">
 
 export enum AuthenticationState {
     AUTHORIZATION_FAILED = "AUTHORIZATION_FAILED",
-    ACCESS_DENIED = "ACCESS_DENIED"
+    ACCESS_DENIED = "ACCESS_DENIED",
+    ACCESS_GRANTED = "ACCESS_GRANTED"
 }
