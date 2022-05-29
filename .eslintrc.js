@@ -42,7 +42,6 @@ module.exports = {
 				{ name: "Lodash", match: "^lodash-es", order: 70 },
 				{ name: "Other", match: "^.*", order: 80 }
 			]
-		}
-		]
+		}]
 	}
 }
