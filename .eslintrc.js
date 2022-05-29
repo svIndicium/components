@@ -34,7 +34,7 @@ module.exports = {
 				{ name: "Vue", match: "^vue", order: 10 },
 				{ name: "Vue", match: "^@vue", order: 11 },
 				{ name: "Nuxt", match: "^@nuxt", order: 12 },
-				{ name: "Lib", match: "^@svindicium/general-lib", order: 20 },
+				{ name: "Lib", match: "^@svindicium/lib", order: 20 },
 				{ name: "Store", match: "^store", order: 30 },
 				{ name: "API", match: "^api", order: 40 },
 				{ name: "Components", match: "^components", order: 50 },
