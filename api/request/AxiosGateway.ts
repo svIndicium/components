@@ -1,6 +1,7 @@
 import { entries, isUndefined } from "lodash-es"
-import { AxiosRequestConfig, Axios } from "axios"
+
 import Gateway from "../../api/request/Gateway"
+import { AxiosRequestConfig, Axios } from "axios"
 import { Parameters, RequestMethod, RequestOptions, Request } from "../../api/request/index"
 
 export class AxiosGateway implements Gateway {

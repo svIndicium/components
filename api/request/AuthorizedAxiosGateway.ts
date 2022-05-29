@@ -1,3 +1,4 @@
+import Gateway from "../../api/request/Gateway"
 import { AxiosResponse } from "axios"
 import {
     AuthenticationState,
@@ -7,7 +8,6 @@ import {
     RequestMethod,
     RequestOptions
 } from "../../api/request/index"
-import Gateway from "../../api/request/Gateway"
 import { eventBus } from "../../api/index"
 
 export class AuthorizedAxiosGateway implements Gateway {
