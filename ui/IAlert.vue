@@ -13,7 +13,7 @@
 	import Component from "vue-class-component"
 	import { Prop } from "vue-property-decorator"
 
-	import { AlertType } from "../../components/ui/index"
+	import { AlertType } from "../ui"
 
 	@Component
 	export default class IAlert extends Vue {

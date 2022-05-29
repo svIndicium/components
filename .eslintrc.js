@@ -37,7 +37,7 @@ module.exports = {
 				{ name: "Lib", match: "^@svindicium/lib", order: 20 },
 				{ name: "Store", match: "^store", order: 30 },
 				{ name: "API", match: "^api", order: 40 },
-				{ name: "Components", match: "^components", order: 50 },
+				{ name: "UI Components", match: "^ui", order: 50 },
 				{ name: "Utils", match: "^utils", order: 60 },
 				{ name: "Lodash", match: "^lodash-es", order: 70 },
 				{ name: "Other", match: "^.*", order: 80 }

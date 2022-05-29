@@ -32,8 +32,8 @@
 
 	import { FieldErrors } from "@svindicium/lib/validation"
 
-	import ITextInput from "../../../components/ui/input/ITextInput.vue"
-	import { HTMLEvent } from "../../../utils/Events"
+	import ITextInput from "../../ui/input/ITextInput.vue"
+	import { HTMLEvent } from "../../utils/Events"
 
 	@Component({
 		components: { ITextInput }

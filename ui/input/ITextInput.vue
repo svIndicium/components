@@ -34,7 +34,7 @@
 
 	import { isNull, isUndefined } from "lodash-es"
 
-	import { HTMLEvent } from "../../../utils/Events"
+	import { HTMLEvent } from "../../utils/Events"
 
 	@Component
 	export default class ITextInput<T> extends Vue {
