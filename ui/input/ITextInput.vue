@@ -60,7 +60,7 @@
 			}
 			return this.errors[this.fieldName]?.map((error) => {
 				if (!this.genericMessages.includes(error)) {
-					return Vue.filter("locale")(`${ this.baseTranslationKey }.${ this.fieldName }.${ error }`)
+					return Vue.filter("locale")(`${ this.baseTranslationKey }.${ String(this.fieldName) }.${ error }`)
 				}
 				return Vue.filter("locale")(`${ this.baseTranslationKey }.${ error }`)
 			})
